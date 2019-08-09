@@ -1,0 +1,12 @@
+generate the key:
+ssh-keygen -t rsa -b 4096 -C "shrekabu@yahoo.co.in"
+
+$ cat /home/ibmpvc/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCnX5HxFI/IsCf0LPQxb77TS3nASq5jK+vZjkm6ue+i5yPytm5/LA+5AjxjVoJ+3xdCbUsuFiAWvTc45gPwmLCEMfnsUe9/aVFXKUJs1gw/+XY2C3CLbM1j5EBUGbYdkOya21MtIWWS71Ol5LFohoPaCIX/mJo+QKFnRvnwSZF/sEoIwx3W7zy+6spVYq0dYR3Wl8w680ToRvqNucBX7NjI/NZge8Ab/DBQ+50qGDfzWvKaXKnV9ZXb+HxFdSNz8qOPsmqIeumJfP5cVEA/FXJWtiADHZYuTpXjdoMri8nhxwQe3hZVEzYqk45F1mo9Fl2WGnbQmbXyDtmFsjBNo2VO7oycUO0/H5J5oBKmUSIcOi0GRcWVHoNxIpUAELpU0NKX1FnULEYKwAOeSYFnFbcE2mkRKuFaO8OD9F28iXIGIFDhVZzqp26cw+YShxb1M21/eBiX7qxzMKQNzDZOOHH+ZdAD2wwc9A7hj0xhxj4yYckzg+Oy+Wpb7OZdMJLadMmFijU1/DTIgiYlAoy3Aof3z+GHw3197+NykOXjmAH9Jaluv/gaXWqkByqmOYJ5pDBh62gVdJtu2t3FsJms5exKKOEghT4ss3Z4Q1ufNrZOXMGBcOVf+YClnUDZEkDnq+LN1chPcew3bnLPXiaRwKJTuSWD9GbPRhdhyh0/L4RJLw== shrekabu@yahoo.co.in
+
+go to github account:
+
+1) click Settings
+2) click SSH and GPG keys
+3) Click New SSH key or Add SSH key
+4) add the key
