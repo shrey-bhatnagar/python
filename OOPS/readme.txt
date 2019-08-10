@@ -13,10 +13,10 @@ Abstraction: < Implementation hiding >
  1) Data abstraction is a mechanism to provide the essential features without describing the background details. Means provide the functions to access the hidden (private) data.
 
 
-Data Hiding: < data security >
+Data Encapsulation/Hiding: < data security >
  1) Data hiding is a mechanism to hide the internal structure of an object from rest of the program
 
- eg: private variable - 
+ eg: private variable - "__val" ==> object._class.__val
 
 
 Polymorphism: < many form's>
@@ -50,5 +50,3 @@ this is the first function to be called in class.
 
 Destructor: < __del__() >
 There is no "real" destructor, but something similiar, i.e. the method __del__. It is called when the instance is about to be destroyed.
-
-
