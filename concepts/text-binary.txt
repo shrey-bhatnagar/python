@@ -1,0 +1,17 @@
+Differences between binary mode and text mode have been listed below:
+----------------------------------------------------------------------
+1)
+ - Open file in text mode when dealing with formatted text.
+ - Open file in binary mode to access or modify structured records present inside it.
+
+2)
+ - Text mode has end of file (EOF) and newline (carriage return-linefeed combination) characters in the file buffer
+ - Binary mode does not have such characters.
+
+3)
+ - fgetc(), fputc(), fprintf(), fscanf() etc are the common functions used in text mode
+ - fread(), fwrite() etc are the commonly used functions in binary mode.
+
+4)
+ - Numbers are stored as string of characters in text mode
+ - Numbers are stored as present in memory (int, float etc.) in binary mode
