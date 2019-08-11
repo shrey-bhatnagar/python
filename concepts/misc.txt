@@ -1,0 +1,263 @@
+
+
+MATH:
+----------------------------------------------
+import math 
+print math.floor(3.5) # floor  ===> 3.0
+print math.trunc(3.5) # work as floor ===> 3 
+print math.ceil(3.5)  # ceil   ===> 4.0
+print math.floor(-3.5) # floor ===> -4.0  
+print math.trunc(-3.5) # work as ceil ===> -3
+print math.ceil(-3.5)  # ceil  ===> -3.0
+
+ceil --- round up
+floor -- round down
+trunc -- truncate decimal
+
+
+
+COPY:
+----------------------------------------------
+import copy
+a=[1,2,3]
+b=copy.copy(a) #shallow copy
+b=copy.deepcopy(a) #deep copy
+b=a[:] #deep copy
+
+
+
+id() function:
+----------------------------------------------
+This is the function which returns unique value, if compared with 'C' this could seen as memory address.
+
+
+ord() and chr:
+----------------------------------------------
+chr(122)    # ===> 'z', int--to--str
+ord('z')    # ===> 122, str--to--int
+
+
+strip(), lstrip(), rstrip():
+----------------------------------------------
+strip() = copyies the str but excludes the 'whitespace' in both left and right, this is leading and trailig spaces are removed.
+lstrip() = copyies the str but excludes the 'whitespace' at the left.
+rstrip() = copyies the str but excludes the 'whitespace' at the right.
+
+a='  aa '
+b=a.strip(aa) # will not strip,because it need to match leading/trailing spaces as well.
+b=a.strip('  aa') # this will work because it will match the space accordingly.
+
+
+isalpha():
+----------------------------------------------
+>>> a = 'asdasfjshdfjb'
+>>> b='asdhahds7jsdbkahsjkd'
+>>> a.isalpha()
+True
+>>> b.isalpha()
+False
+
+
+join()
+----------------------------------------------
+s=''
+d=[1,2,3]
+f=(1,2,3)
+
+s.join(d) #works, s='123'
+s.join(f) #works, s='123'
+d.join(f) # fails because 'join' only works with 'str'
+f.join(d) # fails because 'join' only works with 'str'
+
+
+str.Title()
+----------------------------------------------
+parameters:str is a valid string which we need to convert.
+return: This function returns a string which 
+has first letter in each word is uppercase and all 
+remaining letters are lowercase.
+
+str1 = 'geeKs foR geEks'
+str2 = str1.title() 
+print 'First Output after Title() method is = ', str2
+
+output: 
+First Output after Title() method is =  Geeks For Geeks
+
+
+composition: 
+----------------------------------------------
+To demonstrate composition, we need to instantiate other objects in the class and then make use of those instances
+
+class PC: # Base class
+    processor = "Xeon" # Common attribute
+    def __init__(self, processor, ram):
+        self.processor = processor
+        self.ram = ram
+
+    def set_processor(self, new_processor):
+        processor = new_processor
+
+    def get_PC(self):
+        return "%s cpu & %s ram" % (self.processor, self.ram)
+
+class Tablet():
+    make = "Intel"
+    def __init__(self, processor, ram, make):
+        self.PC = PC(processor, ram) # Composition
+        self.make = make
+
+    def get_Tablet(self):
+        return "Tablet with %s CPU & %s ram by %s" % (self.PC.processor, self.PC.ram, self.make)
+
+if __name__ == "__main__":
+    tab = Tablet("i7", "16 GB", "Intel")
+    print(tab.get_Tablet())
+
+
+filter:
+----------------------------------------------
+filter(function, sequence) ==> returns an iterator that is already filtered.
+
+# a list contains both even and odd numbers.  
+seq = [0, 1, 2, 3, 5, 8, 13] 
+  
+# result contains odd numbers of the list 
+result = filter(lambda x: x % 2, seq) 
+print(list(result)) 
+  
+# result contains even numbers of the list 
+result = filter(lambda x: x % 2 == 0, seq) 
+print(list(result))
+
+output:
+[1, 3, 5, 13]
+[0, 2, 8]
+
+
+global()
+----------------------------------------------
+>>> import os
+>>> globals()
+{'abc': <function abc at 0x7feacf5b25f0>, '__builtins__': <module '__builtin__' (built-in)>, '__package__': None, '__name__': '__main__', 'os': <module 'os' from '/usr/lib/python2.7/os.pyc'>, '__doc__': None, 'math': <module 'math' (built-in)>}
+>>> a=100
+>>> globals()
+{'a': 100, 'abc': <function abc at 0x7feacf5b25f0>, '__builtins__': <module '__builtin__' (built-in)>, '__package__': None, '__name__': '__main__', 'os': <module 'os' from '/usr/lib/python2.7/os.pyc'>, '__doc__': None, 'math': <module 'math' (built-in)>}
+
+
+The globals() function in Python returns the current global symbol table as a dictionary object.
+
+Python maintains a symbol table to keep all necessary information about a program. This info includes the names of variables, methods, and classes used by the program.
+
+All the information in this table remains in the global scope of the program and Python allows us to retrieve it using the globals() method.
+
+eg)
+# Example: globals() function 
+x = 9
+def fn(): 
+    y = 3
+    z = y + x
+    # Calling the globals() method
+    z = globals()['x'] = z
+    return z
+       
+# Test Code     
+ret = fn() 
+print(ret)   #===> 12
+
+
+zip()
+----------------------------------------------
+The zip method lets us map the corresponding index of multiple containers so that we can use them using as a single unit.
+
+Signature: 
+ zip(*iterators)
+Arguments: 
+ Python iterables or collections (e.g., list, string, etc.)
+Returns: 
+ A single iterator object with combined mapped values
+# Example: zip() function
+  
+emp = [ "tom", "john", "jerry", "jake" ] 
+age = [ 32, 28, 33, 44 ] 
+dept = [ 'HR', 'Accounts', 'R&D', 'IT' ] 
+  
+# call zip() to map values 
+out = zip(emp, age, dept)
+  
+# convert all values for printing them as set 
+out = set(out) 
+  
+# Displaying the final values  
+print ("The output of zip() is : ",end="") 
+print (out)
+The output is:
+
+The output of zip() is : {('jerry', 33, 'R&D'), ('jake', 44, 'IT'), ('john', 28, 'Accounts'), ('tom', 32, 'HR')}
+
+
+conditional operator or ternary operator:
+----------------------------------------------
+[onTrue] if [Condition] else [onFalse]
+
+x, y = 35, 75
+smaller = x if x < y else y
+print(smaller)
+
+
+PDB debugging:
+----------------------------------------------
+$ python -m pdb python-script.py
+import pdb;pdb.set_trace()
+
+* Add breakpoint (b)
+* Resume execution (c)
+* Step by step debugging (s)
+* Move to the next line (n)
+* List source code (l)
+* Print an expression (p)
+
+
+count(val):
+----------------------------------------------
+returns the count of val passed in the list/tupple/string
+
+The count() function has one compulsory and two optional parameters.
+Mandatory paramater: 
+1)substring – string whose count is to be found.
+
+Optional Parameters:
+1)start (Optional) – starting index within the string where search starts.
+2)end (Optional) – ending index within the string where search ends.
+
+>>> b
+['a', 'b', 'c', 'a']
+>>> b.count('a')
+2
+>>> c
+(22, 5, 88)
+>>> c.append(88)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'append'
+>>> c.count(22)
+1
+>>> weekdays = ['sun','mon','tue','wed','thu','fri','sun','mon','mon']
+>>> print([[i,weekdays.count(i)]for i in set(weekdays)])
+[['wed', 1], ['sun', 2], ['thu', 1], ['tue', 1], ['mon', 3], ['fri', 1]]
+
+
+----------------------------------------------
+
+
+----------------------------------------------
+
+
+----------------------------------------------
+
+
+----------------------------------------------
+
+
+----------------------------------------------
+
