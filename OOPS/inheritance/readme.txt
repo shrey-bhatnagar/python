@@ -17,3 +17,29 @@ Name   |Notation  |Behaviour
  _name |Protected |Like a public member, but they shouldn't be directly accessed from outside.
 __name |Private   |Can't be seen and accessed from outside
 -----------------------------------------------------------
+
+Super function:
+---------------
+1) to use super function in python-2 use "object" 
+==> class A(object): ..... 
+class B(A):
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+        super(B,self).__init__(x,y)
+2) if __init__ is redefined it has to be handled properly.
+class A(object):
+    def __init__(self,x1,y1):
+        self.x1=x1
+        self.y2=y1
+class B(A):
+    def __init__(self,x2,y2):
+        #super(A,self).__init__(x2,y2)
+        A.__init__(self,x2,y2)
+        self.x3=x2
+        self.y4=y2
+class C(B):
+    def __init__(self,x3,y3):
+        super(B, self).__init__(x3,y3)
+        #B.__init__(self,x3,y3)
+
