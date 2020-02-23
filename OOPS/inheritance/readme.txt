@@ -34,12 +34,12 @@ class A(object):
         self.y2=y1
 class B(A):
     def __init__(self,x2,y2):
-        #super(A,self).__init__(x2,y2)
+        #super(B,self).__init__(x2,y2)
         A.__init__(self,x2,y2)
         self.x3=x2
         self.y4=y2
 class C(B):
     def __init__(self,x3,y3):
-        super(B, self).__init__(x3,y3)
+        super(C, self).__init__(x3,y3) ## note here we call local class name in super with its self.
         #B.__init__(self,x3,y3)
 
