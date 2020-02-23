@@ -20,7 +20,7 @@ __name |Private   |Can't be seen and accessed from outside
 
 Super function:
 ---------------
-1) to use super function in python-2 use "object" 
+1) to use super function in python-2 use "object" (python-2 ===> "new-style" class. this is "object" need to be defined)
 ==> class A(object): ..... 
 class B(A):
     def __init__(self,x,y):
