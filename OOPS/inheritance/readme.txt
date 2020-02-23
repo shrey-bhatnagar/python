@@ -27,7 +27,7 @@ class B(A):
         self.x=x
         self.y=y
         super(B,self).__init__(x,y)
-2) if __init__ is redefined it has to be handled properly.
+2) if __init__ is redefined it has to be handled properly.(pyth-2 we need to call super(base class, self) in python-3 super() works)
 class A(object):
     def __init__(self,x1,y1):
         self.x1=x1
@@ -35,11 +35,13 @@ class A(object):
 class B(A):
     def __init__(self,x2,y2):
         #super(B,self).__init__(x2,y2)
+        #super().__init__(x2,y2) #===> python3
         A.__init__(self,x2,y2)
         self.x3=x2
         self.y4=y2
 class C(B):
     def __init__(self,x3,y3):
         super(C, self).__init__(x3,y3) ## note here we call local class name in super with its self.
+        #super().__init__(x3,y3) #===> python3
         #B.__init__(self,x3,y3)
 
