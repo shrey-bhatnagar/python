@@ -55,7 +55,9 @@ def disp(num):
 # driver function 
 if __name__ == '__main__': 
     app.run(debug = True) 
-
+    
+    #to change the port number from default
+    app.run(host='0.0.0.0', port=80)
 ================================
 o/p---2:
 --------
